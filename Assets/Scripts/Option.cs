@@ -7,7 +7,7 @@ using TMPro;
 public class Option : MonoBehaviour
 {
     public int OptionID; //Respuesta correcta
-    public string OptionName;
+    public string OptionName; //Texto que va en el boton de opcion
 
     void Start()
     {
