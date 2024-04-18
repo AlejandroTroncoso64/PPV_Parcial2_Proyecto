@@ -8,22 +8,20 @@ using TMPro;
 public class LessonContainer : MonoBehaviour
 {
     [Header("GameObject Configuration")]
-    public int Lesson;
-    public int CurrentSection = 0;
-    public int CurrentLesson = 0;
-    public int TotalLessons = 0;
-    //DeclaraciÛn de variables para conocer cual es la seccion y leccion actual y el total
-
-    public bool AreAllLessonsComplete = false;
+    //Declaraci√≥n de variables para conocer cual es la seccion y leccion actual y el total
+    public int Lesson; //Numero de la leccion
+    public int CurrentLesson = 0; //Numero de la leccion actual
+    public int TotalLessons = 0; //Total de lecciones
+    public bool AreAllLessonsComplete = false; //Dato para ver si todas las lecciones se completaron o no
 
     [Header("UI Configuration")]
-    public TMP_Text StageTitle;
-    public TMP_Text LessonStage;
+    public TMP_Text StageTitle; //Titulo de la leccion
+    public TMP_Text LessonStage; //Texto de la leccion
 
     [Header("External GameObject Configuration")]
-    public GameObject lessonContainer;
+    public GameObject lessonContainer; //GameObject en unity para el lesson container
 
-    //Datos de cada lecciÛn
+    //Datos de cada lecci√≥n
     [Header("Lesson Data")]
     public ScriptableObject LessonData;
 
@@ -42,7 +40,7 @@ public class LessonContainer : MonoBehaviour
 
 
     //Evento, se consulta al inicio y al presionar el boton, On es para eventos
-    public void OnUpdateUI()
+    public void OnUpdateUI() //Abre y cierra la ventana "lesson container"
     {
         if (StageTitle != null || LessonStage != null) 
         { 
@@ -55,6 +53,7 @@ public class LessonContainer : MonoBehaviour
             Debug.LogWarning("GameObject Null, revisa las variables TMP_Text");
         }
     }
+    
 
     //Activar o desactivar ventana de lessonContainer
     public void EnableWindow()
@@ -63,12 +62,12 @@ public class LessonContainer : MonoBehaviour
 
         if (lessonContainer.activeSelf)
         {
-            //Desactivar objeto si est· activo
+            //Desactivar objeto si est√° activo
             lessonContainer.SetActive(false);
         }
         else
         {
-            //Activar objeto si est· inactivo
+            //Activar objeto si est√° inactivo
             lessonContainer.SetActive(true);
         }
     }
